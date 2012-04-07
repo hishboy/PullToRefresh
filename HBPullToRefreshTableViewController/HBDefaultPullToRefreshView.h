@@ -1,9 +1,8 @@
 //
-//  PullRefreshTableViewController.h
-//  Plancast
+//  HBDefaultPullToRefreshView.h
 //
-//  Created by Leah Culver on 7/2/10.
-//  Copyright (c) 2010 Leah Culver
+//  Created by Hicham Bouabdallah on 04/07/12 (Inspired by Leah Culver's PullRefreshTableViewController).
+//  Copyright (c) 2012 Hicham Bouabdallah
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,18 +26,19 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "HBPullToRefreshView.h"
 
-
-@interface PullRefreshTableViewController : UITableViewController {
+@interface HBDefaultPullToRefreshView : UIView<HBPullToRefreshView> {
     UIView *refreshHeaderView;
     UILabel *refreshLabel;
     UIImageView *refreshArrow;
     UIActivityIndicatorView *refreshSpinner;
-    BOOL isLoading;
     NSString *textPull;
     NSString *textRelease;
     NSString *textLoading;
+    id refreshTarget;
+    SEL refreshAction;
 }
 
 @property (nonatomic, retain) UIView *refreshHeaderView;
@@ -51,10 +51,6 @@
 @property (nonatomic, assign) id refreshTarget;
 @property (nonatomic, assign) SEL refreshAction;
 
-@property (nonatomic, assign) BOOL enablePulltoRefresh;
-
-- (void)startLoading;
-- (void)stopLoading;
-- (void)setRefereshTarget:(id)t action:(SEL)a;
+-(void)setRefreshTarget:(id)refreshTarget action:(SEL)refreshAction;
 
 @end

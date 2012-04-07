@@ -13,10 +13,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    HBDefaultPullToRefreshView *v = (HBDefaultPullToRefreshView *)self.pullRefreshView;
+    [v setRefreshTarget:self action:@selector(refreshTime)]; 
     self.title = @"Pull to Refresh";
     items = [[NSMutableArray alloc] initWithObjects:@"What time is it?", nil];
-    [self setRefereshTarget:self action:@selector(refreshTime)];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -28,7 +32,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     static NSString *CellIdentifier = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -54,7 +57,7 @@
 
     [self.tableView reloadData];
 
-    [self stopLoading];
+    [self stopLoading:YES];
 }
 
 - (void)dealloc {
