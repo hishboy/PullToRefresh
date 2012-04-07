@@ -35,7 +35,6 @@
     UILabel *refreshLabel;
     UIImageView *refreshArrow;
     UIActivityIndicatorView *refreshSpinner;
-    BOOL isDragging;
     BOOL isLoading;
     NSString *textPull;
     NSString *textRelease;
@@ -46,14 +45,16 @@
 @property (nonatomic, retain) UILabel *refreshLabel;
 @property (nonatomic, retain) UIImageView *refreshArrow;
 @property (nonatomic, retain) UIActivityIndicatorView *refreshSpinner;
-@property (nonatomic, copy) NSString *textPull;
-@property (nonatomic, copy) NSString *textRelease;
-@property (nonatomic, copy) NSString *textLoading;
+@property (nonatomic, retain) NSString *textPull;
+@property (nonatomic, retain) NSString *textRelease;
+@property (nonatomic, retain) NSString *textLoading;
+@property (nonatomic, assign) id refreshTarget;
+@property (nonatomic, assign) SEL refreshAction;
 
-- (void)setupStrings;
-- (void)addPullToRefreshHeader;
+@property (nonatomic, assign) BOOL enablePulltoRefresh;
+
 - (void)startLoading;
 - (void)stopLoading;
-- (void)refresh;
+- (void)setRefereshTarget:(id)t action:(SEL)a;
 
 @end

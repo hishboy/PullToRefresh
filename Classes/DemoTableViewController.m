@@ -16,6 +16,7 @@
 
     self.title = @"Pull to Refresh";
     items = [[NSMutableArray alloc] initWithObjects:@"What time is it?", nil];
+    [self setRefereshTarget:self action:@selector(refreshTime)];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,7 +41,7 @@
     return cell;
 }
 
-- (void)refresh {
+- (void)refreshTime {
     [self performSelector:@selector(addItem) withObject:nil afterDelay:2.0];
 }
 
