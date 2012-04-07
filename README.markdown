@@ -8,6 +8,7 @@ A simple iPhone TableViewController for adding pull-to-refresh functionality. Th
 ![](http://s3.amazonaws.com/leah.baconfile.com/blog/refresh-small-4.png)
 
 Inspired by:
+
 1. [Tweetie 2](http://www.atebits.com/tweetie-iphone/)
 
 2. [Oliver Drobnik's blog post](http://www.drobnik.com/touch/2009/12/how-to-make-a-pull-to-reload-tableview-just-like-tweetie-2/)
