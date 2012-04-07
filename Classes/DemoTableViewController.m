@@ -7,7 +7,7 @@
 //
 
 #import "DemoTableViewController.h"
-
+#import "DemoPullToRefreshView.h"
 
 @implementation DemoTableViewController
 
@@ -17,8 +17,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    HBDefaultPullToRefreshView *v = (HBDefaultPullToRefreshView *)self.pullRefreshView;
+    DemoPullToRefreshView *v = [[DemoPullToRefreshView new] autorelease];
     [v setRefreshTarget:self action:@selector(refreshTime)]; 
+    self.pullRefreshView = v;
     self.title = @"Pull to Refresh";
     items = [[NSMutableArray alloc] initWithObjects:@"What time is it?", nil];
 }
