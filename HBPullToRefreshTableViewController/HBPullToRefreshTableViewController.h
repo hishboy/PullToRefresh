@@ -36,7 +36,7 @@
     UIView<HBPullToRefreshView> *pullRefreshView;
 }
 
-@property (nonatomic, assign) UIView<HBPullToRefreshView> *pullRefreshView;
+@property (nonatomic, retain) UIView<HBPullToRefreshView> *pullRefreshView;
 @property (nonatomic, assign) BOOL enablePulltoRefresh;
 @property (nonatomic, assign) BOOL isLoading;
 

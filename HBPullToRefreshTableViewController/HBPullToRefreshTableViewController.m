@@ -76,6 +76,7 @@
     [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(pullRefreshView))];
     [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(enablePulltoRefresh))];
     [self.tableView removeObserver:self forKeyPath:NSStringFromSelector(@selector(contentOffset))];
+    self.pullRefreshView = nil;
     [super dealloc];
 }
 

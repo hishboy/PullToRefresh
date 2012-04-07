@@ -56,6 +56,7 @@ static const CGFloat kRefreshHeaderHeight = 52.0f;
         self.refreshLabel.backgroundColor = [UIColor clearColor];
         self.refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
         self.refreshLabel.textAlignment = UITextAlignmentCenter;
+        self.refreshLabel.text = self.textPull;
         
         self.refreshArrow = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]] autorelease];
         self.refreshArrow.frame = CGRectMake(floorf((kRefreshHeaderHeight - 27) / 2),
