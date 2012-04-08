@@ -49,10 +49,10 @@ static const CGFloat kRefreshHeaderHeight = 52.0f;
         self.textRelease = NSLocalizedString(@"Release to refresh...", @"Release to refresh...");
         self.textLoading = NSLocalizedString(@"Loading...", @"Loading...");
         
-        self.refreshHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 - kRefreshHeaderHeight, 320, kRefreshHeaderHeight)];
+        self.refreshHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0 - kRefreshHeaderHeight, 320, kRefreshHeaderHeight)] autorelease];
         self.refreshHeaderView.backgroundColor = [UIColor clearColor];
         
-        self.refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, kRefreshHeaderHeight)];
+        self.refreshLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, kRefreshHeaderHeight)] autorelease];
         self.refreshLabel.backgroundColor = [UIColor clearColor];
         self.refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
         self.refreshLabel.textAlignment = UITextAlignmentCenter;
